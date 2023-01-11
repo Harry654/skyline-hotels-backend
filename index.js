@@ -5,7 +5,7 @@ const Mongoose = require('mongoose');
 
 require("dotenv").config();
 const { MONGOUSER, MONGOPASSWORD, MONGOHOST, MONGOPORT, MONGODATABASE } = process.env;
-const PORT =  4000;
+const PORT =  process.env.PORT || 4000;
 
 const userRoute = require('./src/routes/user.route');
 const roomRoute = require("./src/routes/room.route");
