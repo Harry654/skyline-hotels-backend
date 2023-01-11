@@ -5,7 +5,7 @@ const Mongoose = require('mongoose');
 
 require("dotenv").config();
 const { MONGOUSER, MONGOPASSWORD, MONGOHOST, MONGOPORT, MONGODATABASE } = process.env;
-const PORT = process.env.PORT || 4000;
+const PORT =  4000;
 
 const userRoute = require('./src/routes/user.route');
 const roomRoute = require("./src/routes/room.route");
@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
     res.status(200).send("Welcome to the Skyline hotels backend");
 })
 
-const dbLocal = true;
+const dbLocal = false;
 // Mongoose.connect(`mongodb+srv://${ MONGOUSER }:${ MONGOPASSWORD }@${ MONGOHOST }/${ MONGODATABASE }`)
 Mongoose.connect(dbLocal ? 
 `mongodb://localhost:27017/skyline` : 

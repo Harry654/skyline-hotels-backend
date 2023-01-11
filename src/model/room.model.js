@@ -9,10 +9,6 @@ const roomSchema = Schema({
         type: String,
         required: true
     },
-    password: {
-        type: String,
-        requried: true,
-    },
     pictures: {
         type: [String],
         default: []

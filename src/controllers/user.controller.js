@@ -2,10 +2,11 @@ const UserModel = require('../model/user.model');
 
 const handleRegister = async (req, res) => {
     try{
+        // return console.log(typeof req.body)
         let newUser = new UserModel(req.body);
         newUser = await newUser.save();
         return res.status(201).json({
-            message: "Successful!",
+            message: "Registration Successful!",
             success: true,
             newUser,
             statusCode: 201
